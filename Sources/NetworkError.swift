@@ -48,8 +48,8 @@ public enum NetworkError: Error {
 // MARK: - Hashable
 
 extension NetworkError: Hashable {
-  public var hashValue: Int {
-    return reason.hashValue
+  public func hash(into hasher: inout Hasher) {
+    hasher.combine(reason)
   }
 }
 

@@ -279,8 +279,13 @@ extension Networking {
             self?.reset(mode: currentMode)
           }
 
-          if let error = result.error, (error as NSError).isOffline {
-            return
+          switch result {
+          case .failure(let error):
+            if (error as NSError).isOffline {
+              return
+            }
+          case .success:
+            break
           }
 
           self?.requestStorage.remove(capsule)

@@ -75,9 +75,8 @@ public enum ContentType {
 // MARK: - Hashable
 
 extension ContentType: Hashable {
-  public var hashValue: Int {
-    let string = header ?? "query"
-    return string.hashValue
+  public func hash(into hasher: inout Hasher) {
+    hasher.combine(header ?? "query")
   }
 }
 

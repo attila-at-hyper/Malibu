@@ -39,11 +39,11 @@ public struct Request: Equatable {
 
 public extension Request {
 
-  public static func get(_ resource: URLStringConvertible,
-                         parameters: [String: Any] = [:],
-                         headers: [String: String] = [:],
-                         storePolicy: StorePolicy = .unspecified,
-                         cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy) -> Request {
+  static func get(_ resource: URLStringConvertible,
+                  parameters: [String: Any] = [:],
+                  headers: [String: String] = [:],
+                  storePolicy: StorePolicy = .unspecified,
+                  cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy) -> Request {
     return Request(
       method: .get,
       resource: resource,
@@ -55,12 +55,12 @@ public extension Request {
     )
   }
 
-  public static func post(_ resource: URLStringConvertible,
-                          contentType: ContentType = .json,
-                          parameters: [String: Any] = [:],
-                          headers: [String: String] = [:],
-                          storePolicy: StorePolicy = .unspecified,
-                          cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy) -> Request {
+  static func post(_ resource: URLStringConvertible,
+                   contentType: ContentType = .json,
+                   parameters: [String: Any] = [:],
+                   headers: [String: String] = [:],
+                   storePolicy: StorePolicy = .unspecified,
+                   cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy) -> Request {
     return Request(
       method: .post,
       resource: resource,
@@ -72,12 +72,12 @@ public extension Request {
     )
   }
 
-  public static func put(_ resource: URLStringConvertible,
-                         contentType: ContentType = .json,
-                         parameters: [String: Any] = [:],
-                         headers: [String: String] = [:],
-                         storePolicy: StorePolicy = .unspecified,
-                         cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy) -> Request {
+  static func put(_ resource: URLStringConvertible,
+                  contentType: ContentType = .json,
+                  parameters: [String: Any] = [:],
+                  headers: [String: String] = [:],
+                  storePolicy: StorePolicy = .unspecified,
+                  cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy) -> Request {
     return Request(
       method: .put,
       resource: resource,
@@ -89,12 +89,12 @@ public extension Request {
     )
   }
 
-  public static func patch(_ resource: URLStringConvertible,
-                           contentType: ContentType = .json,
-                           parameters: [String: Any] = [:],
-                           headers: [String: String] = [:],
-                           storePolicy: StorePolicy = .unspecified,
-                           cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy) -> Request {
+  static func patch(_ resource: URLStringConvertible,
+                    contentType: ContentType = .json,
+                    parameters: [String: Any] = [:],
+                    headers: [String: String] = [:],
+                    storePolicy: StorePolicy = .unspecified,
+                    cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy) -> Request {
     return Request(
       method: .patch,
       resource: resource,
@@ -106,12 +106,12 @@ public extension Request {
     )
   }
 
-  public static func delete(_ resource: URLStringConvertible,
-                            contentType: ContentType = .query,
-                            parameters: [String: Any] = [:],
-                            headers: [String: String] = [:],
-                            storePolicy: StorePolicy = .unspecified,
-                            cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy) -> Request {
+  static func delete(_ resource: URLStringConvertible,
+                     contentType: ContentType = .query,
+                     parameters: [String: Any] = [:],
+                     headers: [String: String] = [:],
+                     storePolicy: StorePolicy = .unspecified,
+                     cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy) -> Request {
     return Request(
       method: .delete,
       resource: resource,
@@ -123,12 +123,12 @@ public extension Request {
     )
   }
 
-  public static func head(_ resource: URLStringConvertible,
-                          contentType: ContentType = .query,
-                          parameters: [String: Any] = [:],
-                          headers: [String: String] = [:],
-                          storePolicy: StorePolicy = .unspecified,
-                          cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy) -> Request {
+  static func head(_ resource: URLStringConvertible,
+                   contentType: ContentType = .query,
+                   parameters: [String: Any] = [:],
+                   headers: [String: String] = [:],
+                   storePolicy: StorePolicy = .unspecified,
+                   cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy) -> Request {
     return Request(
       method: .head,
       resource: resource,
@@ -140,13 +140,13 @@ public extension Request {
     )
   }
 
-  public static func upload(data: Data,
-                            to resource: URLStringConvertible,
-                            method: Method = .post,
-                            contentType: ContentType = .formURLEncoded,
-                            headers: [String: String] = [:],
-                            storePolicy: StorePolicy = .unspecified,
-                            cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy) -> Request {
+  static func upload(data: Data,
+                     to resource: URLStringConvertible,
+                     method: Method = .post,
+                     contentType: ContentType = .formURLEncoded,
+                     headers: [String: String] = [:],
+                     storePolicy: StorePolicy = .unspecified,
+                     cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy) -> Request {
     return Request(
       method: method,
       resource: resource,
@@ -159,12 +159,12 @@ public extension Request {
     )
   }
 
-  public static func upload(multipartParameters: [String: String],
-                            to resource: URLStringConvertible,
-                            method: Method = .post,
-                            headers: [String: String] = [:],
-                            storePolicy: StorePolicy = .unspecified,
-                            cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy) -> Request {
+  static func upload(multipartParameters: [String: String],
+                     to resource: URLStringConvertible,
+                     method: Method = .post,
+                     headers: [String: String] = [:],
+                     storePolicy: StorePolicy = .unspecified,
+                     cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy) -> Request {
     return Request(
       method: method,
       resource: resource,
